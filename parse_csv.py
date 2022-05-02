@@ -17,7 +17,7 @@ with open('Articulate.csv', "rt", newline='') as csvfile:
         for key, value in row.items():
             if key == "Spade" or len(value) == 0: 
                 continue
-            pattern = r'[^A-Za-z0-9]+'
+            pattern = r'[^A-Za-z0-9 \'\"]+'
             value = re.sub(pattern, '', value)
             words[key].append(value)
             
